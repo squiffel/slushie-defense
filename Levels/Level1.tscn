@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://chejjmfnqqb3"]
+
+[ext_resource type="PackedScene" uid="uid://bj2450c708xsx" path="res://Player/Player.tscn" id="1_46qfd"]
+[ext_resource type="PackedScene" uid="uid://t6yufejodsqn" path="res://Enemy/Enemy.tscn" id="2_50snc"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_46qfd")]
+position = Vector2(283, 289)
+motion_mode = 1
+
+[node name="Enemy" parent="." instance=ExtResource("2_50snc")]
+position = Vector2(833, 300)
+motion_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 768, 0, 768, 0, 192, 128, 384, 64, 512, 192, 640, 256, 704, 320, 640, 640, 704, 896, 640, 1216, 704, 1152, 192, 1216, 64, 768, 128, 320, 64, 0, 192)
