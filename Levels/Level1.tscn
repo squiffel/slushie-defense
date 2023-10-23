@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chejjmfnqqb3"]
+[gd_scene load_steps=5 format=3 uid="uid://chejjmfnqqb3"]
 
 [ext_resource type="PackedScene" uid="uid://d05a21782kpoa" path="res://Camera/Camera.tscn" id="1_0xhkv"]
 [ext_resource type="PackedScene" uid="uid://bj2450c708xsx" path="res://Player/Player.tscn" id="1_46qfd"]
 [ext_resource type="PackedScene" uid="uid://digh6puar70w0" path="res://Enemy/Enemy.tscn" id="2_50snc"]
+[ext_resource type="Script" path="res://Levels/VisiblePolygon2DColliders.gd" id="4_h1fo5"]
 
 [node name="Level1" type="Node2D"]
 
@@ -20,3 +21,7 @@ motion_mode = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1088, 0, 1088, 0, 192, 128, 384, 64, 512, 128, 1024, 256, 704, 320, 640, 512, 896, 1024, 1024, 1792, 1024, 1792, 320, 1792, 64, 768, 128, 320, 64, 0, 192)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(1, 0, 1, 1)
+script = ExtResource("4_h1fo5")
