@@ -44,3 +44,6 @@ func apply_movement(acceleration):
 	motion += acceleration
 	if motion.length() > MAX_SPEED:
 		motion = motion.normalized() * MAX_SPEED
+
+func is_attackable():
+	pass # Does nothing -- Just used by enemy ai to know to chase and attack it
