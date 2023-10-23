@@ -4,13 +4,13 @@ signal signal_share_player_position(player_position)
 
 @export var health : int = 100
 
-
 const MAX_SPEED : float = 500
 var ACCELERATION : float = 2000
 var motion : Vector2 = Vector2.ZERO # Equaliant to Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# This signal tells a global script/object called Main that the player node exists
 	Main.emit_signal("signal_add_player", self)
 
 # Called every frame
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	velocity = motion
 	# Move to the position unless it hits a collision then it will stop at the collision point
 	move_and_slide()
-	# Send out signal
+	# This signal tells any object listening where the player is currently located
 	emit_signal("signal_share_player_position", global_position)
 
 func get_input_axis():
