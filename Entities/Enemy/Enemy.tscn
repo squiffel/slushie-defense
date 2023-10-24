@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://digh6puar70w0"]
+[gd_scene load_steps=6 format=3 uid="uid://digh6puar70w0"]
 
-[ext_resource type="Script" path="res://Enemy/Enemy.gd" id="1_k456f"]
-[ext_resource type="Texture2D" uid="uid://b0h3v5r3o5arf" path="res://icon.svg" id="2_y5ptu"]
+[ext_resource type="Script" path="res://Entities/Enemy/Enemy.gd" id="1_ff1tq"]
+[ext_resource type="Texture2D" uid="uid://b0h3v5r3o5arf" path="res://icon.svg" id="2_wdrna"]
+[ext_resource type="PackedScene" uid="uid://bvke1fhsiyvft" path="res://Entities/Health/HealthBar.tscn" id="3_2jk0x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6nnc"]
 radius = 32.0
@@ -11,7 +12,7 @@ height = 64.0
 radius = 128.0
 
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_k456f")
+script = ExtResource("1_ff1tq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -20,12 +21,16 @@ shape = SubResource("CapsuleShape2D_d6nnc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_y5ptu")
+texture = ExtResource("2_wdrna")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_hdjo8")
+
+[node name="Healthbar" parent="." instance=ExtResource("3_2jk0x")]
+offset_top = -56.0
+offset_bottom = -24.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

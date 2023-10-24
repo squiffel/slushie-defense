@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-@export var health : int = 100
+# Health
+@onready var health_ui_progress_bar : ProgressBar = $Healthbar
 
+# Physics
 @export var MAX_SPEED : float = 200
 var ACCELERATION : float = 2000
 var motion : Vector2 = Vector2.ZERO # Equaliant to Vector2(0,0)
@@ -14,7 +16,7 @@ var ai_attack_node_list : Array = []
 @export var vision_range : int = 256
 @onready var vision_collider : CollisionShape2D = $Area2D/CollisionShape2D
 
-# Called when the node enters the scene tree for the first time.
+# Initialize
 func _ready():
 	# Update the enemy vision radius -- Right now it is just a circle
 	vision_collider.shape.radius = vision_range

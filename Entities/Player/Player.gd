@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 signal signal_share_player_position(player_position)
 
-@export var health : int = 100
+# Health
+@onready var health_ui_progress_bar : ProgressBar = $Healthbar
 
+# Physics
 const MAX_SPEED : float = 500
 var ACCELERATION : float = 2000
 var motion : Vector2 = Vector2.ZERO # Equaliant to Vector2(0,0)
 
-# Called when the node enters the scene tree for the first time.
+# Initialize
 func _ready():
 	# This signal tells a global script/object called Main that the player node exists
 	Main.emit_signal("signal_add_player", self)
