@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var health_ui_progress_bar : ProgressBar = $Healthbar
 
 # Physics
-@export var MAX_SPEED : float = 200
+@export var MAX_SPEED : float = 100
 var ACCELERATION : float = 2000
 var motion : Vector2 = Vector2.ZERO # Equaliant to Vector2(0,0)
 
@@ -13,13 +13,21 @@ var ai_direction : Vector2 = Vector2(-1, 0) # Defaults to left
 var ai_attack_node_list : Array = []
 
 # How far the enemy can see
-@export var vision_range : int = 256
+@export var vision_radius : int = 256
+@export var show_vision_radius : bool = true
 @onready var vision_collider : CollisionShape2D = $Area2D/CollisionShape2D
+@onready var vision_sprite : Sprite2D = $Area2D/VisionCircle
 
 # Initialize
 func _ready():
 	# Update the enemy vision radius -- Right now it is just a circle
-	vision_collider.shape.radius = vision_range
+	vision_collider.shape.radius = vision_radius
+	# Show vision
+	if show_vision_radius:
+		var sprite_width : float = 128.0
+		var vision_diameter : float = vision_radius * 2.0
+		var sprite_scale : float = vision_diameter / sprite_width
+		vision_sprite.scale = Vector2(sprite_scale, sprite_scale)
 
 # Called every frame
 func _physics_process(delta):

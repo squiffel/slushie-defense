@@ -1,27 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://chejjmfnqqb3"]
+[gd_scene load_steps=6 format=3 uid="uid://chejjmfnqqb3"]
 
 [ext_resource type="PackedScene" uid="uid://d05a21782kpoa" path="res://Entities/Camera/Camera.tscn" id="1_0xhkv"]
 [ext_resource type="PackedScene" uid="uid://bj2450c708xsx" path="res://Entities/Player/Player.tscn" id="1_46qfd"]
 [ext_resource type="PackedScene" uid="uid://digh6puar70w0" path="res://Entities/Enemy/Enemy.tscn" id="2_50snc"]
 [ext_resource type="Script" path="res://Utilities/VisiblePolygon2DColliders.gd" id="4_4bbal"]
+[ext_resource type="PackedScene" uid="uid://cbh4r2md7pw53" path="res://Entities/GasStation/GasStation.tscn" id="5_0xu7d"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("1_0xhkv")]
 
 [node name="Player" parent="." instance=ExtResource("1_46qfd")]
-position = Vector2(283, 289)
+position = Vector2(960, 512)
 motion_mode = 1
 
 [node name="Enemy" parent="." instance=ExtResource("2_50snc")]
-position = Vector2(833, 300)
+position = Vector2(2560, 512)
 motion_mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1088, 0, 1088, 0, 192, 128, 384, 64, 512, 128, 1024, 256, 704, 320, 640, 512, 896, 1024, 1024, 1792, 1024, 1792, 320, 1792, 64, 768, 128, 320, 64, 0, 192)
+polygon = PackedVector2Array(0, 0, 3072, 0, 3072, 1024, 0, 1024, 0, 64, 64, 64, 64, 960, 3008, 960, 3008, 64, 0, 64)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
 color = Color(1, 0, 1, 1)
 script = ExtResource("4_4bbal")
+
+[node name="GasStation" parent="." instance=ExtResource("5_0xu7d")]
+position = Vector2(320, 512)

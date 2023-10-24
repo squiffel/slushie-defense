@@ -15,7 +15,7 @@ script = ExtResource("1_p727u")
 z_index = 1
 shape = SubResource("CapsuleShape2D_nfwq5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yiw4i")
 
