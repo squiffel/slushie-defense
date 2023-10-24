@@ -25,6 +25,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/scale=0.75
 
+[dotnet]
+
+project/assembly_name="Slushie-defense"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -28,6 +28,9 @@ func _ready():
 		var vision_diameter : float = vision_radius * 2.0
 		var sprite_scale : float = vision_diameter / sprite_width
 		vision_sprite.scale = Vector2(sprite_scale, sprite_scale)
+	else:
+		vision_sprite.hide()
+		
 
 # Called every frame
 func _physics_process(delta):
