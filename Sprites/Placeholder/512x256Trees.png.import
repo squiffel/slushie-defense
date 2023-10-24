@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b83jqnilk1odw"
-path="res://.godot/imported/GasStationRoofPlaceholder.png-1970001743da49e15510ddd9ec3cb6e2.ctex"
+uid="uid://doxoc5hvcc5y8"
+path="res://.godot/imported/512x256Trees.png-6f69ac0348266acb5753fc95cc7747e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/GasStation/Sprites/GasStationRoofPlaceholder.png"
-dest_files=["res://.godot/imported/GasStationRoofPlaceholder.png-1970001743da49e15510ddd9ec3cb6e2.ctex"]
+source_file="res://Sprites/Placeholder/512x256Trees.png"
+dest_files=["res://.godot/imported/512x256Trees.png-6f69ac0348266acb5753fc95cc7747e1.ctex"]
 
 [params]
 

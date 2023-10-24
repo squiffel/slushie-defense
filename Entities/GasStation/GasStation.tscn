@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbh4r2md7pw53"]
+[gd_scene load_steps=4 format=3 uid="uid://thui7p52g4o6"]
 
-[ext_resource type="Texture2D" uid="uid://b83jqnilk1odw" path="res://Entities/GasStation/Sprites/GasStationRoofPlaceholder.png" id="1_fmeqv"]
+[ext_resource type="Texture2D" uid="uid://b83jqnilk1odw" path="res://Sprites/Placeholder/GasStationRoofPlaceholder.png" id="1_n22cx"]
 [ext_resource type="PackedScene" uid="uid://bvke1fhsiyvft" path="res://Entities/Health/HealthBar.tscn" id="2_kpqkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7d4t"]
@@ -16,6 +16,6 @@ shape = SubResource("RectangleShape2D_l7d4t")
 [node name="Sprite2DRoof" type="Sprite2D" parent="."]
 rotation = -1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("1_fmeqv")
+texture = ExtResource("1_n22cx")
 
 [node name="Healthbar" parent="." instance=ExtResource("2_kpqkr")]
